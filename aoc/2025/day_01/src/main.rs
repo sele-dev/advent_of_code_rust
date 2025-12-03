@@ -1,6 +1,7 @@
 use std::fs::read_to_string;
 use std::str::FromStr;
 use anyhow::{ anyhow, Result };
+use util::get_inputs_filepath;
 
 #[derive(Clone, Copy, Debug)]
 enum Direction {
@@ -101,9 +102,8 @@ fn main() -> Result<()> {
 
     let mut dial_state = DialState::initialize(num_positions, start_position);
 
-    let filepath_part_01 = "./inputs/day_01.txt";
-    // let filepath_part_01 = "./inputs/initial_day_01.txt";
-    let instructions: Vec<Instruction> = read_instructions(filepath_part_01)?;
+    let filepath = get_inputs_filepath("day_01.txt");
+    let instructions: Vec<Instruction> = read_instructions(filepath.as_str())?;
     let mut positions: Vec<i32> = Vec::new();
 
     // Apply each instruction and record where we end up

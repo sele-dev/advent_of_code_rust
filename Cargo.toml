@@ -7,8 +7,10 @@ edition = "2024"
 
 [workspace]
 members = [
+    "aoc/util",
     "aoc/2025/*",
 ]
 
 [workspace.dependencies]
 anyhow = "1.0.100"
+dirs = "6.0.0"
