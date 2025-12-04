@@ -7,3 +7,4 @@ edition = "2024"
 anyhow = { workspace = true }
 prse = { workspace = true }
 util = { path = "../../util" }
+itertools = "0.14.0"
